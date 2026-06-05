@@ -1,0 +1,45 @@
+# ──────────────────────────────────────────────────────────────────────────
+# Personal data lives OUTSIDE the repo (default ~/.swissjobs/) and is NEVER
+# committed. The patterns below are a safety net for anything accidentally
+# created inside the repo tree. Only the *.sample.* files in shared/templates/
+# belong in git.
+# ──────────────────────────────────────────────────────────────────────────
+.swissjobs/
+**/.swissjobs/
+
+# Real CV / preferences / history (samples live in shared/templates/ and are safe)
+/cv.md
+/cv.pdf
+/cv.docx
+/preferences.md
+/seen-postings.jsonl
+/connectors.md
+/cv-versions/
+/applications/
+
+# Secrets & credentials
+.env
+.env.*
+*.key
+*.pem
+*.p12
+secrets/
+credentials.json
+token.json
+*token*.json
+
+# Local Claude settings
+.claude/settings.local.json
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Logs / temp
+*.log
+tmp/
+.cache/
