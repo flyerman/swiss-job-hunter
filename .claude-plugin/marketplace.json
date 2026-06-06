@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "swiss-job-hunter",
+  "description": "Marketplace hosting the jobhunt plugin.",
+  "owner": {
+    "name": "Florent Guiliani"
+  },
+  "plugins": [
+    {
+      "name": "jobhunt",
+      "source": "./"
+    }
+  ]
+}
