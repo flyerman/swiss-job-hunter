@@ -35,6 +35,7 @@
 - **Cantons / cities:** Zürich, Zug, Luzern; plus remote-first CH companies
 - **Acceptable commute:** up to 45 min door-to-door
 - **Mode:** Hybrid preferred (2–3 days office) · Remote OK · Onsite only if exceptional
+- **Employment level (Pensum):** 80–100% (standard Swiss filter; e.g. 60%, 80%, 100%)
 
 ## Languages (ranked — for sourcing & output)
 
@@ -50,6 +51,7 @@
 - **Target salary:** CHF 130,000 – 160,000 / year (base)
 - **Minimum acceptable:** CHF 120,000
 - **Notes:** open to slightly lower for exceptional equity or learning.
+- **Swiss norm:** salaries are CHF, usually annual and often quoted with a 13th-month; many ads omit salary (not a red flag).
 
 ## Seniority
 

@@ -9,7 +9,7 @@ directory — default **`~/.swissjobs/`**. Nothing here is ever committed.
 
 ```
 ~/.swissjobs/
-├── preferences.md        # ranked job types, location, languages, salary, must-haves, dealbreakers
+├── preferences.md        # ranked job types, location, pensum, languages, salary, must-haves, dealbreakers
 ├── cv.md                 # the user's real master CV
 ├── cv-versions/          # tailored CVs per posting (jobhunt:tailor-cv)
 │   └── <company>-<role>-<date>.md
@@ -28,7 +28,10 @@ fields, consumed by `search` and `evaluate`:
   drives grouping in `search` and the "which priority does this match" line in
   `evaluate`.
 - **Location & work mode** — cantons/cities, acceptable commute, remote/hybrid/onsite.
-- **Languages (ranked)** — default EN → FR → DE; used for sourcing and output.
+- **Employment level (Pensum)** — acceptable percentage range (e.g. 80–100%), a
+  standard Swiss filter used by `search`.
+- **Languages (ranked)** — default EN → FR → DE; used to prioritize and write back
+  results. (The *region's* language is used to **query** boards — see `boards.md`.)
 - **Compensation** — target + minimum, in CHF.
 - **Seniority**, **must-haves**, **dealbreakers**.
 - **Optional** — target/avoid companies, work-permit constraints.
@@ -51,6 +54,8 @@ Suggested fields:
 | `status` | `new` / `evaluated` / `applied` / `skipped` |
 
 `search` reads this file to suppress already-seen postings and appends new ones.
+Because the same role is often cross-posted across boards, `search` also dedupes by a
+normalized **employer + title + location** key — not just `id` / `url`.
 
 ## `connectors.md`
 
