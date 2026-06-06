@@ -40,6 +40,20 @@ One job ad — pasted text, a URL, or a screenshot.
 9. Offer next steps: `jobhunt:tailor-cv`, `jobhunt:draft-email`,
    `jobhunt:interview-prep`; offer to log the posting to the seen list.
 
+## Swiss context
+
+Account for Swiss norms when scoring and reporting (see
+`${CLAUDE_PLUGIN_ROOT}/shared/references/boards.md`):
+
+- **Salary:** many ads omit it — treat a missing salary as **neutral, not a gap**.
+  Pay is CHF, usually annual, often with a 13th-month.
+- **Work permit:** surface any explicit EU/EFTA vs. third-country requirement and
+  whether it affects the user.
+- **Pensum:** note the advertised employment percentage and whether it fits the
+  user's preferred range.
+- **Language:** the ad's language reflects the region — factor the required working
+  language into fit.
+
 ## Output format
 
 - **Header:** role · company · location · ad language · matched priority

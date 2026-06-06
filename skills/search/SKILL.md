@@ -24,17 +24,20 @@ or "today only".
 ## Steps
 
 1. Load preferences: the three ranked job types (titles + keywords), location &
-   mode, and ranked languages (default **EN → FR → DE**).
+   mode, **Pensum (employment %)**, and ranked languages (default **EN → FR → DE**).
 2. Load `boards.md` (board list + access rules) and `seen-postings.jsonl` (the
    dedup log).
 3. For each board, follow the **access reality** in `boards.md`: prefer a
    first-party connector if one is present; otherwise use web search + Claude for
    Chrome in the user's authenticated session. Keep **LinkedIn** conservative and
    in-browser. Never scrape; respect each site's terms.
-4. Build queries from each job type's titles/keywords, filtered by location and
-   language priority.
-5. **Dedup** every hit against `seen-postings.jsonl` (by `id`/`url`). Skip
-   anything already seen so the same posting never resurfaces.
+4. Build queries from each job type's titles/keywords **in the region's language**
+   (German for German-speaking cantons, French for the Romandie, Italian for Ticino —
+   not only English, or you miss most local ads), filtered by location and Pensum.
+   Results are still ranked and written back in the user's preferred languages.
+5. **Dedup** every hit against `seen-postings.jsonl` (by `id`/`url`) **and** across
+   boards (the same role is cross-posted — match on employer + title + location),
+   keeping the most direct apply path. Skip anything already seen so it never resurfaces.
 6. For each NEW posting, assign the best job-type priority and a rough fit score
    (0–100). *(TODO(you): tune scoring weights and recency to taste.)*
 7. Group by priority (1 first); within each group, rank by score.
