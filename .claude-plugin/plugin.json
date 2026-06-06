@@ -1,0 +1,11 @@
+{
+  "name": "jobhunt",
+  "version": "0.1.0",
+  "description": "Run your Swiss job hunt from Claude Cowork — onboard your CV and preferences, search Swiss boards, evaluate ads (DE/FR/IT/EN), tailor your CV, draft Gmail applications, apply via Claude for Chrome with confirmation, and prep for interviews.",
+  "author": {
+    "name": "Florent Guiliani"
+  },
+  "homepage": "https://github.com/flyerman/swiss-job-hunter",
+  "repository": "https://github.com/flyerman/swiss-job-hunter",
+  "license": "MIT"
+}
