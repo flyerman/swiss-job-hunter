@@ -33,8 +33,11 @@ of duplicating rules (DRY).
 
 ## Preferences & data model
 
-- Personal data lives in a **local, git-ignored** directory — default
-  **`~/.swissjobs/`** — never in the repo. See `shared/references/data-model.md`.
+- Personal data lives in a **local, git-ignored** directory, written as
+  **`<data-dir>`** throughout the plugin — never in the repo. Skills **resolve**
+  it (`JOBHUNT_DATA_DIR`, then a `.jobhunt-data-dir` pointer file in a connected
+  folder, then `~/.swissjobs/`) rather than hardcoding a path, because `~` does
+  not survive a Cowork session. See `shared/references/data-model.md`.
 - `preferences.md` captures the **three ranked job types** (each with
   titles/keywords), location & work mode, ranked languages (default
   **EN → FR → DE**), salary in CHF, seniority, must-haves, dealbreakers, and
@@ -65,8 +68,9 @@ in the README.
 
 - **Committed:** plugin manifest, skills, shared references/templates (fake data
   only), docs.
-- **Never committed:** anything under `~/.swissjobs/`, `.env`, secrets/keys,
-  `.claude/settings.local.json` (see `.gitignore`).
+- **Never committed:** anything under the data dir, any `.jobhunt-data-dir`
+  pointer file, `.env`, secrets/keys, `.claude/settings.local.json`
+  (see `.gitignore`).
 - **Commit messages:** short, imperative ("Add evaluate skill", "Tighten apply
   guardrails").
 - **Versioning:** bump `version` in `.claude-plugin/plugin.json` whenever skills

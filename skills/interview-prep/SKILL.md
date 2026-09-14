@@ -16,9 +16,10 @@ theme, each with a STAR angle drawn from the user's **real** experience.
 
 ## Reads / writes
 
-- **Reads:** `~/.swissjobs/cv.md` (required — else `jobhunt:setup`), and the ad.
+- **Reads:** `<data-dir>/cv.md` (required — else `jobhunt:setup`), and the ad.
 - **Writes:** optionally
-  `~/.swissjobs/applications/<company>-<role>-interview-prep.md`.
+  `<data-dir>/applications/<company>-<role>-interview-prep.md`.
+- **`<data-dir>`** is resolved per `${CLAUDE_PLUGIN_ROOT}/shared/references/data-model.md` (env var, then `.jobhunt-data-dir` pointer file, then `~/.swissjobs/`). Resolve it; never assume the default.
 
 ## Steps
 

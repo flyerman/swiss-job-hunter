@@ -16,10 +16,11 @@ or "today only".
 
 ## Reads / writes
 
-- **Reads:** `~/.swissjobs/preferences.md`, `~/.swissjobs/seen-postings.jsonl`,
+- **Reads:** `<data-dir>/preferences.md`, `<data-dir>/seen-postings.jsonl`,
   and `${CLAUDE_PLUGIN_ROOT}/shared/references/boards.md`. If preferences are
   missing, run `jobhunt:setup` first.
-- **Writes:** appends new postings to `~/.swissjobs/seen-postings.jsonl`.
+- **Writes:** appends new postings to `<data-dir>/seen-postings.jsonl`.
+- **`<data-dir>`** is resolved per `${CLAUDE_PLUGIN_ROOT}/shared/references/data-model.md` (env var, then `.jobhunt-data-dir` pointer file, then `~/.swissjobs/`). Resolve it; never assume the default.
 
 ## Steps
 

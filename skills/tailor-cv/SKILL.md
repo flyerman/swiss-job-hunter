@@ -15,9 +15,10 @@ The target posting (text or URL).
 
 ## Reads / writes
 
-- **Reads:** `~/.swissjobs/cv.md` (the master CV — required; else run
-  `jobhunt:setup`), optionally `~/.swissjobs/preferences.md`.
-- **Writes:** `~/.swissjobs/cv-versions/<company>-<role>-<YYYY-MM-DD>.md`.
+- **Reads:** `<data-dir>/cv.md` (the master CV — required; else run
+  `jobhunt:setup`), optionally `<data-dir>/preferences.md`.
+- **Writes:** `<data-dir>/cv-versions/<company>-<role>-<YYYY-MM-DD>.md`.
+- **`<data-dir>`** is resolved per `${CLAUDE_PLUGIN_ROOT}/shared/references/data-model.md` (env var, then `.jobhunt-data-dir` pointer file, then `~/.swissjobs/`). Resolve it; never assume the default.
 
 ## Steps
 

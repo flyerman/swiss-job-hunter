@@ -1,7 +1,7 @@
 {
   "name": "jobhunt",
-  "version": "0.2.0",
-  "description": "Run your Swiss job hunt from Claude Cowork — onboard your CV and preferences, search Swiss boards, evaluate ads (DE/FR/IT/EN), tailor your CV, draft Gmail applications, apply via Claude for Chrome with confirmation, and prep for interviews.",
+  "version": "0.3.0",
+  "description": "Run your Swiss job hunt from Claude Cowork \u2014 onboard your CV and preferences, search Swiss boards, evaluate ads (DE/FR/IT/EN), tailor your CV, draft Gmail applications, apply via Claude for Chrome with confirmation, and prep for interviews.",
   "author": {
     "name": "Florent Guiliani"
   },

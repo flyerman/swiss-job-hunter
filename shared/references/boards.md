@@ -143,7 +143,7 @@ company sites, plus sponsored-listing noise — dedupe and down-rank.
 Two different things — don't conflate them:
 
 - **Prioritize & write back** in the user's ranked languages from
-  `~/.swissjobs/preferences.md` (default **EN → FR → DE**): English-language postings
+  `<data-dir>/preferences.md` (default **EN → FR → DE**): English-language postings
   first, then French, then German.
 - **Query** in the **region's** language to actually surface ads (German for Zürich,
   French for Geneva, …), per the cross-cutting note above.
@@ -153,7 +153,7 @@ Two different things — don't conflate them:
 ## How `search` should use this list
 
 1. Load the ranked job types, location, **Pensum**, and ranked languages from
-   `~/.swissjobs/preferences.md`.
+   `<data-dir>/preferences.md`.
 2. **Pick boards by region / language:** jobs.ch (German-speaking regions), jobup.ch
    (Romandie), job-room.ch (always — especially registration-list / public-sector
    roles), hiring.cafe (always — early ATS signal); LinkedIn and Indeed as
@@ -162,7 +162,7 @@ Two different things — don't conflate them:
    Chrome in the user's session. Respect each site's terms; never scrape.
 4. Build queries from each job type's titles/keywords **in the region's language**,
    filtered by location and Pensum.
-5. **Dedupe** new hits against `~/.swissjobs/seen-postings.jsonl` (by `id`/`url`)
+5. **Dedupe** new hits against `<data-dir>/seen-postings.jsonl` (by `id`/`url`)
    **and** across boards (by employer + title + location); keep the most direct apply
    path.
 6. For each NEW posting, assign the best job-type priority and a rough fit score
