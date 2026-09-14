@@ -22,10 +22,17 @@ server: just skills, shared references, and templates.
 
 ## Install
 
-1. In Claude Cowork, go to **Plugins → Upload** (or add it via your marketplace)
-   and select this plugin.
-2. Run `/reload-plugins` if needed.
-3. Start with **"set up my job search"** to trigger `jobhunt:setup`.
+This repo doubles as its own **plugin marketplace**, so you can install it
+straight from GitHub. In Claude Code (or the Cowork plugin manager) run:
+
+```
+/plugin marketplace add flyerman/swiss-job-hunter
+/plugin install jobhunt@swiss-job-hunter
+```
+
+Then start with **"set up my job search"** to trigger `jobhunt:setup`. Run
+`/reload-plugins` if a freshly installed skill doesn't show up, and
+`/plugin marketplace update swiss-job-hunter` to pull later changes.
 
 ## Prerequisites
 
@@ -68,11 +75,12 @@ See [`shared/references/guardrails.md`](shared/references/guardrails.md).
 ## Repository layout
 
 ```
-.claude-plugin/plugin.json   — plugin manifest (name: jobhunt)
-skills/<name>/SKILL.md        — one folder per skill
-shared/references/            — boards, guardrails, data-model (skills point here)
-shared/templates/             — fake sample CV / preferences / seen-log
-CLAUDE.md                     — project instructions for Claude
+.claude-plugin/plugin.json       — plugin manifest (name: jobhunt)
+.claude-plugin/marketplace.json  — marketplace manifest (this repo is its own storefront)
+skills/<name>/SKILL.md           — one folder per skill
+shared/references/               — boards, guardrails, data-model (skills point here)
+shared/templates/                — fake sample CV / preferences / seen-log
+CLAUDE.md                        — project instructions for Claude
 ```
 
 ## License
