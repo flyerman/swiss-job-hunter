@@ -1,6 +1,6 @@
 <!--
   SAMPLE / FAKE DATA — committed so skills know the shape of a CV.
-  Your REAL CV lives at ~/.swissjobs/cv.md and is NEVER committed to this repo.
+  Your REAL CV lives at <data-dir>/cv.md and is NEVER committed to this repo.
   `jobhunt:setup` copies this file there; you then replace every field with
   your real details. All names, companies, dates, and numbers below are invented.
 -->

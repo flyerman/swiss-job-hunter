@@ -8,7 +8,7 @@ files point here instead of restating them.
 Applies to `jobhunt:tailor-cv` and `jobhunt:draft-email`.
 
 - **Only truthful reframing** of what is already in the user's real CV
-  (`~/.swissjobs/cv.md`).
+  (`<data-dir>/cv.md`).
 - **Never invent** experience, skills, employers, job titles, dates, education,
   certifications, or metrics.
 - Re-ordering, re-emphasizing, and re-wording real facts to match a posting is
@@ -38,8 +38,10 @@ Applies to `jobhunt:draft-email`.
 
 - This repository is **public**. **Never commit** personal data or secrets:
   no real CV, no real preferences, no application history, no API keys or tokens.
-- All personal data lives in the **git-ignored data dir** (default
-  `~/.swissjobs/`), outside the repo. See `data-model.md`.
+- All personal data lives in the **git-ignored data dir** `<data-dir>`, outside
+  the repo — resolved per `data-model.md`, default `~/.swissjobs/`.
+- The `.jobhunt-data-dir` pointer file names a path on the user's machine. It
+  belongs in the user's **own** repo if anywhere; **never commit one here**.
 - Only **fake / sample** data ships in `shared/templates/`.
 
 ## 5. Automation conservatism

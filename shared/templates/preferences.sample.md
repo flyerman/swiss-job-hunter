@@ -1,6 +1,6 @@
 <!--
   SAMPLE / FAKE preferences. Your REAL preferences live at
-  ~/.swissjobs/preferences.md and are NEVER committed to this repo.
+  <data-dir>/preferences.md and are NEVER committed to this repo.
   `jobhunt:setup` creates your real file from this template.
   `jobhunt:search` and `jobhunt:evaluate` both read the ranked job types below,
   so keep the headings/structure intact and just change the values.

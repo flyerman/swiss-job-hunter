@@ -17,10 +17,11 @@ confirmation**. Human-in-the-loop is mandatory.
 
 ## Reads / writes
 
-- **Reads:** `~/.swissjobs/cv.md` or a `~/.swissjobs/cv-versions/*` file,
-  `~/.swissjobs/preferences.md`, `~/.swissjobs/connectors.md`. Uses **Claude for
+- **Reads:** `<data-dir>/cv.md` or a `<data-dir>/cv-versions/*` file,
+  `<data-dir>/preferences.md`, `<data-dir>/connectors.md`. Uses **Claude for
   Chrome**.
-- **Writes:** a record under `~/.swissjobs/applications/`.
+- **Writes:** a record under `<data-dir>/applications/`.
+- **`<data-dir>`** is resolved per `${CLAUDE_PLUGIN_ROOT}/shared/references/data-model.md` (env var, then `.jobhunt-data-dir` pointer file, then `~/.swissjobs/`). Resolve it; never assume the default.
 
 ## Steps
 

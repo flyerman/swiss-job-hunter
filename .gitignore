@@ -7,6 +7,9 @@
 .swissjobs/
 **/.swissjobs/
 
+.jobhunt-data-dir
+**/.jobhunt-data-dir
+
 # Real CV / preferences / history (samples live in shared/templates/ and are safe)
 /cv.md
 /cv.pdf

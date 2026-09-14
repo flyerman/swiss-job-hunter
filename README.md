@@ -59,7 +59,10 @@ kept conservative and within its terms. See
 
 This is a **public** repo. **No personal data is ever committed.** Your CV, real
 preferences, application history, and the seen-postings log live only in a local,
-git-ignored directory — default **`~/.swissjobs/`**. Only fake sample data ships
+git-ignored directory — **`~/.swissjobs/`** by default, or anywhere you point it
+with a `.jobhunt-data-dir` file or the `JOBHUNT_DATA_DIR` environment variable.
+Point it at a folder you have connected to Cowork if you want your data to
+survive between sessions and scheduled runs. Only fake sample data ships
 here, in [`shared/templates/`](shared/templates/). See
 [`shared/references/data-model.md`](shared/references/data-model.md).
 

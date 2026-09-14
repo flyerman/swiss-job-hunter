@@ -16,9 +16,10 @@ tailored to the role and contact, in the ad's language.
 
 ## Reads / writes
 
-- **Reads:** `~/.swissjobs/cv.md`, `~/.swissjobs/preferences.md`,
-  `~/.swissjobs/connectors.md`. Uses the **Gmail** connector.
-- **Writes:** a Gmail draft; optionally a record under `~/.swissjobs/applications/`.
+- **Reads:** `<data-dir>/cv.md`, `<data-dir>/preferences.md`,
+  `<data-dir>/connectors.md`. Uses the **Gmail** connector.
+- **Writes:** a Gmail draft; optionally a record under `<data-dir>/applications/`.
+- **`<data-dir>`** is resolved per `${CLAUDE_PLUGIN_ROOT}/shared/references/data-model.md` (env var, then `.jobhunt-data-dir` pointer file, then `~/.swissjobs/`). Resolve it; never assume the default.
 
 ## Steps
 

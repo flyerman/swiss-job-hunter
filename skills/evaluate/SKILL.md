@@ -14,9 +14,10 @@ One job ad — pasted text, a URL, or a screenshot.
 
 ## Reads / writes
 
-- **Reads:** `~/.swissjobs/cv.md`, `~/.swissjobs/preferences.md`. If either is
+- **Reads:** `<data-dir>/cv.md`, `<data-dir>/preferences.md`. If either is
   missing, tell the user to run `jobhunt:setup` first.
-- **Writes:** optionally append the posting to `~/.swissjobs/seen-postings.jsonl`.
+- **Writes:** optionally append the posting to `<data-dir>/seen-postings.jsonl`.
+- **`<data-dir>`** is resolved per `${CLAUDE_PLUGIN_ROOT}/shared/references/data-model.md` (env var, then `.jobhunt-data-dir` pointer file, then `~/.swissjobs/`). Resolve it; never assume the default.
 
 ## Steps
 

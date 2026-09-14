@@ -1,14 +1,39 @@
 # Data model & where personal data lives
 
 All of the user's personal data lives **outside the repo**, in a git-ignored
-directory — default **`~/.swissjobs/`**. Nothing here is ever committed.
-`jobhunt:setup` creates this directory and its files from the templates in
-`shared/templates/`.
+directory referred to throughout the plugin as **`<data-dir>`**. Nothing here is
+ever committed. `jobhunt:setup` creates this directory and its files from the
+templates in `shared/templates/`.
+
+## Resolving `<data-dir>`
+
+Every skill resolves the data directory the same way, in this order. **Never
+hardcode a path** — always resolve.
+
+1. **`JOBHUNT_DATA_DIR`**, if that environment variable is set and non-empty.
+2. **A `.jobhunt-data-dir` pointer file** at the root of any folder connected to
+   the session. It contains one line: the data directory path. A relative path
+   resolves against the folder holding the pointer file, so
+   `data` in `~/work/job-search/.jobhunt-data-dir` means
+   `~/work/job-search/data`. If more than one connected folder has a pointer
+   file, ask the user which to use rather than guessing.
+3. **`~/.swissjobs/`** otherwise. This is the default and is what `setup`
+   creates when the user has expressed no preference.
+
+**Why this is not just `~/.swissjobs/`.** In Cowork, and especially in scheduled
+tasks, the home directory is per-session and does not survive. Anything written
+to `~` is gone by the next run, which silently resets the dedup log and loses
+tailored CVs and application records. A user who wants their data to persist
+points `<data-dir>` at a connected folder, which does. `setup` should offer
+this rather than leaving the user to discover the loss.
+
+Resolve once at the start of a skill, and say which path you resolved to if it
+is not the default — the user should never be guessing where their CV went.
 
 ## Directory layout
 
 ```
-~/.swissjobs/
+<data-dir>/
 ├── preferences.md        # ranked job types, location, pensum, languages, salary, must-haves, dealbreakers
 ├── cv.md                 # the user's real master CV
 ├── cv-versions/          # tailored CVs per posting (jobhunt:tailor-cv)
@@ -66,5 +91,7 @@ before relying on a connector.
 
 ## Privacy
 
-Everything above is personal. It stays in `~/.swissjobs/` and is **never
-committed** to this public repo. See `guardrails.md`.
+Everything above is personal. It stays in `<data-dir>` and is **never
+committed** to this public repo. The pointer file `.jobhunt-data-dir` may be
+committed to the *user's own* private repo; it must never be committed here.
+See `guardrails.md`.
